@@ -29,38 +29,6 @@ $border-help: none;
 
 $transition-global: all 0.2s ease;
 
-// Mixins
-
-@mixin mobile {
-  @media (max-width: 599px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: 600px) and (max-width: 899px) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin desktop-xl {
-  @media (min-width: 1400px) {
-    @content;
-  }
-}
-
-// EG. How to use...
-
-// @include mobile {
-//    font-size: 1rem;
-// }
-
 // Random function
 
 @function randomNum($min, $max) {

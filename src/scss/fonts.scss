@@ -38,7 +38,7 @@ h1 {
     font-size: 5vw;
     font-weight: 400;
 
-    @include desktop-xl {
+    @include media($desktopxl...) {
       font-size: 4rem;
     }
   }
@@ -53,7 +53,7 @@ h1 {
   font-weight: 700;
   margin-bottom: 60px;
 
-  @include desktop-xl {
+  @include media($desktopxl...) {
     font-size: 10rem;
   }
 }

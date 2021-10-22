@@ -89,7 +89,7 @@ section {
     max-width: 320px;
 
     @include media($mobile...) {
-      max-width: 450px;
+      max-width: 600px;
     }
 
     &-container {
