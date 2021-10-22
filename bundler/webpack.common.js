@@ -20,7 +20,9 @@ module.exports = {
       minify: true,
     }),
     new MiniCSSExtractPlugin(),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ],
 
   module: {
