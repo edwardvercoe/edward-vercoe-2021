@@ -1,0 +1,6 @@
+@include media($mobile...) {
+}
+
+@include media($desktopxl...) {
+  display: inline-block;
+}

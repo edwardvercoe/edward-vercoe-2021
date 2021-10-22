@@ -1,0 +1,77 @@
+// Font size
+$f-mob: 12px;
+$f-xs: 16px;
+$f-sml: 20px;
+$f-mid: 26px;
+$f-med: 32px;
+$f-lrg: 40px;
+$f-xl: 60px;
+$f-proj: 70px;
+$f-hero-med: 100px;
+$f-hero: 140px;
+
+// colors
+
+$accent-color: #e85c6b;
+$footer-bg: #242427;
+$white: #fefefe;
+
+// padding
+
+$padding-dt: 0 40px;
+$padding-mob: 0 15px;
+
+// helpers
+// $border-help: 1px dotted purple;
+$border-help: none;
+
+// anim
+
+$transition-global: all 0.2s ease;
+
+// Mixins
+
+@mixin mobile {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 600px) and (max-width: 899px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+// EG. How to use...
+
+// @include mobile {
+//    font-size: 1rem;
+// }
+
+// Random function
+
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+// How to use..
+
+// .foo {
+//   font-size: #{randomNum(5, 10)}px;
+// }

@@ -1,0 +1,84 @@
+.nav {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px $border-help;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+
+  &__header {
+    border: 1px $border-help;
+    width: 100%;
+    max-width: 1440px;
+    padding: $padding-dt;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    @include media($mobile...) {
+      padding: $padding-mob;
+      padding-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__burger {
+    width: 33px;
+
+    cursor: pointer;
+
+    .burger-brick {
+      height: 4px;
+      background: #fff;
+      margin-top: 6px;
+      -webkit-transition: 0.3s ease-out;
+      -moz-transition: 0.3s ease-out;
+      -ms-transition: 0.3s ease-out;
+      -o-transition: 0.3s ease-out;
+      transition: 0.3s ease-out;
+    }
+
+    &.open .burger-brick:first-child {
+      -webkit-transform: rotate(405deg);
+      -moz-transform: rotate(405deg);
+      -ms-transform: rotate(405deg);
+      -o-transform: rotate(405deg);
+      transform: rotate(405deg);
+      margin-top: 14px;
+    }
+
+    &.open .burger-brick:last-child {
+      -webkit-transform: rotate(-405deg);
+      -moz-transform: rotate(-405deg);
+      -ms-transform: rotate(-405deg);
+      -o-transform: rotate(-405deg);
+      transform: rotate(-405deg);
+      margin-top: -14px;
+    }
+
+    &.open .middle {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+  }
+}

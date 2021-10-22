@@ -1,0 +1,136 @@
+.project-modal {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  top: 0;
+  left: 100%;
+  position: fixed;
+  color: $white;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  &__tech {
+    margin-bottom: 30px !important;
+  }
+
+  figure {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+
+    @include media($mobile...) {
+      height: 300px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgb(36, 36, 39);
+      background: linear-gradient(0deg, rgba(36, 36, 39, 1) 20%, rgba(255, 255, 255, 0) 100%);
+      z-index: 10;
+    }
+
+    img {
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  &.active {
+    left: 0;
+    z-index: 999;
+  }
+
+  &__container {
+    max-height: 100vh;
+    min-height: 100%;
+    overflow: auto;
+    background-color: $footer-bg;
+    width: 80%;
+    margin-left: auto;
+    position: relative;
+
+    @include media($mobile...) {
+      width: 85%;
+    }
+  }
+
+  &__content {
+    padding: 0px 30px;
+
+    @include media($mobile...) {
+      padding: $padding-mob;
+    }
+
+    a {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .project-modal__description {
+    max-width: 900px;
+    padding-top: 30px;
+    border-top: 1px solid $accent-color;
+  }
+
+  .project-close {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: calc(20% - 70px);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 0;
+    visibility: hidden;
+
+    @include media($mobile...) {
+      left: calc(15% - 60px);
+    }
+
+    &.active {
+      opacity: 1;
+      user-select: initial;
+      visibility: visible;
+    }
+
+    div {
+      width: 60px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: $white;
+
+      &:nth-child(1) {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      &:nth-child(2) {
+        -webkit-transform: translate(-50%, -50%) rotate(90deg);
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+}

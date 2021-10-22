@@ -1,0 +1,58 @@
+.swiper {
+  width: 100%;
+  overflow: visible;
+
+  @include media($mobile...) {
+    width: 85%;
+  }
+
+  &-wrapper {
+    align-items: flex-end;
+  }
+
+  &__img-container {
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-height: 664px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 18px 50px -10px;
+    opacity: 0.9;
+    transition: $transition-global;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      box-shadow: rgba(255, 255, 255, 0.5) 0px 18px 50px -10px;
+    }
+
+    img {
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}
+
+.swiper-slide {
+  width: 100%;
+  // overflow: hidden;
+
+  h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 700;
+
+    @include media($mobile...) {
+      font-size: 1rem;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+}
