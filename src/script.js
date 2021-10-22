@@ -15,6 +15,11 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 const spacekey = process.env.CONTENTFUL_SPACE_ID;
 const accesskey = process.env.CONTENTFUL_ACCESS_KEY;
 
+console.log(spacekey);
+console.log(process.env.CONTENTFUL_SPACE_ID);
+console.log(accesskey);
+console.log(process.env.CONTENTFUL_ACCESS_KEY);
+
 // ******************************
 //     INIT SELECTORS
 // ******************************
