@@ -9,6 +9,7 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@contentful/rich-text-html-renderer": "^15.4.0",
+    "animejs": "^3.2.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "contentful": "^8.5.8",

@@ -6,7 +6,36 @@
   left: 100%;
   position: fixed;
   color: $white;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.7s ease;
+
+  &.active {
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  &__skeleton {
+    &--header {
+      background-color: rgb(41, 41, 41);
+      display: inline-block;
+      border-radius: 3px;
+      color: transparent;
+    }
+
+    &--hero {
+      background-color: rgb(41, 41, 41);
+    }
+
+    &--description {
+      p {
+        background-color: rgb(41, 41, 41);
+        display: inline-block;
+        border-radius: 3px;
+        color: transparent;
+      }
+    }
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -44,7 +73,7 @@
       width: 100%;
       height: 100%;
       background: rgb(36, 36, 39);
-      background: linear-gradient(0deg, rgba(36, 36, 39, 1) 20%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(0deg, $footer-bg 20%, rgba(0, 0, 0, 0) 100%);
       z-index: 10;
     }
 
@@ -52,11 +81,6 @@
       width: 100%;
       position: relative;
     }
-  }
-
-  &.active {
-    left: 0;
-    z-index: 999;
   }
 
   &__container {
@@ -67,6 +91,11 @@
     width: 80%;
     margin-left: auto;
     position: relative;
+    left: 100%;
+    transition: left 0.7s ease;
+    &.active {
+      left: 0% !important;
+    }
 
     @include media($mobile...) {
       width: 85%;

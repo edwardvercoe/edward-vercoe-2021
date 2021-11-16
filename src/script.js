@@ -1,5 +1,6 @@
 import "./threeParticles";
 import "./scss/style.scss";
+import anime from "animejs/lib/anime.es.js";
 
 import Swiper, { Pagination, FreeMode } from "swiper";
 import "swiper/css";
@@ -24,7 +25,9 @@ const burgerButton = document.querySelector("#burger");
 const projectModal = document.querySelector("#projectModal");
 const projectModalClose = document.querySelector(".project-close");
 const menuModal = document.querySelector("#menuModal");
+const menuModalInner = document.querySelector(".project-modal__container");
 const htmlElem = document.querySelector("html");
+const projectContainer = document.querySelector(".project-modal__inner");
 
 let entriesLoaded = {
   agency: false,
@@ -114,6 +117,7 @@ const openProjectModal = (id) => {
   projectModal.classList.add("active");
   document.querySelector("html").classList.add("disable-scroll");
   projectModalClose.classList.add("active");
+  menuModalInner.classList.add("active");
 
   if (id) {
     getProjectInfo(id);
@@ -124,6 +128,22 @@ const closeProjectModal = () => {
   projectModal.classList.remove("active");
   document.querySelector("html").classList.remove("disable-scroll");
   projectModalClose.classList.remove("active");
+  menuModalInner.classList.remove("active");
+  projectContainer.innerHTML = `
+  
+  <figure class="project-modal__skeleton--hero"></figure>
+
+  <div class="project-modal__content">
+    <h2 class="project-modal__skeleton--header">Website Title</h2>
+
+    <div class="project-modal__description project-modal__skeleton--description">
+      <p>
+        description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi accusantium officiis perferendis soluta voluptate rerum tempora error quibusdam ex quam! Molestias adipisci recusandae repellat, dolorum velit reiciendis voluptatum, repudiandae officiis aliquam illum in,
+        aperiam numquam! Cupiditate amet ea corrupti voluptas neque ipsum perspiciatis, officiis temporibus officia quam ipsam esse voluptate?
+      </p>
+    </div>
+  </div>
+  `;
 };
 
 const modalEventListener = () => {
@@ -142,7 +162,6 @@ const modalEventListener = () => {
 // get project id
 
 const getProjectInfo = (id) => {
-  const projectContainer = document.querySelector(".project-modal__inner");
   let projectHtml = "";
 
   contentfulClient.getEntry(id).then(function (item) {
@@ -288,3 +307,33 @@ const sliderFunContent = (items) => {
     },
   });
 };
+
+// *******************************************
+//        FONTS/ANIME ANIMATIONS
+// *******************************************
+
+// Wrap every letter in a span
+var textWrapper = document.querySelector(".ml7 .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime
+  .timeline({ loop: false })
+  .add({
+    targets: ".ml7 .letter",
+    opacity: 0,
+    // duration: 1000,
+    easing: "easeOutExpo",
+    delay: (el, i) => 50 * i,
+    // delay: 1000,
+  })
+  .add({
+    targets: ".ml7 .letter",
+    translateY: ["1.1em", 0],
+    // translateX: ["0.55em", 0],
+    translateZ: 0,
+    opacity: 1,
+    rotateZ: [90, 0],
+    duration: 750,
+    easing: "easeOutExpo",
+    delay: (el, i) => 50 * i,
+  });

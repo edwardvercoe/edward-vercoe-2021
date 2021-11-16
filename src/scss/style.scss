@@ -312,7 +312,7 @@ section {
     width: 100%;
     height: 200px;
     background: rgb(36, 36, 39);
-    background: linear-gradient(0deg, rgba(36, 36, 39, 1) 20%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(0deg, $footer-bg 20%, rgba(0, 0, 0, 0) 100%);
   }
 
   &__container {
