@@ -71,6 +71,9 @@ section {
   border: $border-help;
   padding-bottom: 120px;
   min-height: 400px;
+  @include media($mobile...) {
+    padding-bottom: 80px;
+  }
 }
 
 .hero {
@@ -81,6 +84,7 @@ section {
   // background-color: pink;
   height: 100vh;
   min-height: 800px;
+  padding-bottom: 0;
 
   &__cta {
     margin-top: 85px;
@@ -96,11 +100,22 @@ section {
       position: relative;
       border-bottom: 1px solid $accent-color;
       margin-bottom: 20px;
+
+      @include media($mobile...) {
+        max-width: 220px;
+      }
+
       a {
         text-decoration: none;
       }
 
       p {
+        transition: $transition-global;
+        &:hover {
+          color: $accent-color;
+          padding-left: 10px;
+        }
+
         &:after {
           content: "";
           position: absolute;
@@ -280,9 +295,14 @@ section {
       position: relative;
       z-index: 1;
       display: table;
+      transition: $transition-global;
 
       @include media($mobile...) {
         font-size: 2.25rem;
+      }
+
+      &:hover {
+        padding-left: 20px;
       }
 
       &:hover:before {
@@ -313,6 +333,10 @@ section {
     height: 200px;
     background: rgb(36, 36, 39);
     background: linear-gradient(0deg, $footer-bg 20%, rgba(0, 0, 0, 0) 100%);
+
+    @include media($mobile...) {
+      height: 50px;
+    }
   }
 
   &__container {
@@ -334,6 +358,7 @@ section {
     display: flex;
     border-bottom: 1px solid $accent-color;
     margin-bottom: 15px;
+    transition: $transition-global;
   }
 
   &__icon-wrapper {

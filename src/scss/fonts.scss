@@ -49,12 +49,12 @@ h1 {
 }
 
 .section-heading {
-  font-size: 12vw;
+  font-size: 10vw;
   font-weight: 700;
   margin-bottom: 60px;
 
   @include media($desktopxl...) {
-    font-size: 10rem;
+    font-size: 8rem;
   }
 }
 
